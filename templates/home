@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--Meta tags-->
+    <meta charset="UTF-8">
+    <Meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--Title of the webpage-->
+    <title>Mandriva Website</title>
+    <!--CSS-->
+    <style>
+        /* Styling for the body */
+        body{
+            font-family: Arial, sans-serif; /* Font for text */
+            margin: 0; /* Remove default margin */
+            padding: 0; /* Remove default padding */
+            background-color: #f4f4f4; /* Background color of the body*/
+        }
+
+        /*Styling for the header*/
+        header {
+            background-color: #f4f4f4; /* Background color of the header*/
+            color: #333; /* Text color of the header*/
+            padding: 10px; /* Padding inside the header */
+            text-align: right; /* Align text to the right */
+        }
+
+        /* Styling for the top-right navigation links*/
+        .top-right-titles {
+            font-size: 16px; /* Font size of the navigation links */
+            margin-right: 10px; /* Margin between navigation links */
+            color: #333; /* Text color of the navigation links*/
+        }
+
+        /* Styling for the navigation section */
+        nav{
+            display: flex; /* Use flexbox for layout*/
+            justify-content: flex-end; /* Align titles to the right*/
+            align-items: center; /* Align items vertically in the center*/
+            padding: 10px; /* Padding inside the navigation section*/
+            background-color: #f4f4f4; /* Background color of the navigation section */
+        }
+
+        /* Styling for the main content section */
+        section{
+            text-align: center; /* Align text to the center*/
+            padding: 20px; /*Padding inside the section*/
+        }
+
+        /* Styling for the main title */
+        h1{
+            color: #333; /* Text color of the main title*/
+        }
+
+        /* Styling for buttons */
+        button{
+            padding: 15px; /* Padding inside the button*/
+            margin: 10px; /*Margin around the button*/
+            font-size: 18px; /* Font size of the button text*/
+            cursor: pointer; /* Cursor style on hover*/
+            border-radius: 15px; /* Border radius to create rounded corners */
+            background-color: #333; /* Background color of the button */
+            color: white; /* Text color of the button */
+            border: none; /* No border */
+            outline: none; /* No outline */
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header section -->
+    <header>
+        <!-- Navigation links -->
+        <nav>
+            <a href="{{ url_for('home')}}" class="top-right-titles">Home</a>
+            <a href="about.html" class="top-right-titles">About</a>
+        </nav>
+    </header>
+
+    <!-- Main content section -->
+    <section>
+        <!-- Main title -->
+        <h1> Mandriva </h1>
+        <!-- Buttons for navigation -->
+        <a href="{{ url_for('analysis')}}"><button>Analysis</button></a>
+        <a href="{{ url_for('test') }}"><button>SNP</button></a>
+    </section>
+
+</body>
+</html>
