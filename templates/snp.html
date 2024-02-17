@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--Document metadata-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--Title of the page-->
+    <title>SNP</title>
+    <!--CSS-->
+    <style>
+        /* Styling for the body*/
+        body{
+            font-family: Arial, sans-serif; /*Font for the text*/
+            margin: 0; /* Remove default margin*/
+            padding: 0; /* Remove default margin*/
+            background-color: #f4f4f4; /* Background color of the body*/
+        }
+
+        /* Styling for the header*/
+        header{
+            background-color: #f4f4f4; /*Background color of the header*/
+            color: #333; /*Text color of the header*/
+            padding: 10px; /*Padding inside the header*/
+            text-align: center; /*Align text to the right*/
+        }
+
+        /*Styling for the top-right navigation links*/
+        .top-right-titles {
+            font-size: 16px; /* Font size of the navigation links*/
+            margin-right: 10px; /* Margin between navigation links*/
+            color: #333; /*Text color of the navigation links*/
+        }
+
+        /* Styling for the navigation bar*/
+        nav{
+            display: flex; /*Flex display for the layout*/
+            justify-content: flex-end; /* Align titles to the right*/
+            align-items: center; /* Align items vertically in the center*/
+            padding: 10px; /* Padding inside the navigation section*/
+            background-color: #f4f4f4; /*Background color of the navigation section*/
+        }
+
+        /*Styling for the main content section*/
+        section{
+            text-align: left; /* Align text to the left*/
+            padding: 20px; /* Padding inside the section*/
+        }
+
+        /*Styling for labels*/
+        label{
+            display: block; /* Display labels as block elements*/
+            margin-bottom: 5px; /* Margin below each label*/
+        }
+
+        /* Styling for text inputs*/
+        input[type="text"] {
+            margin-bottom: 10px; /* Margin below each text input*/
+        }
+
+        /* Styling for checkbox groups*/
+        .checkbox-group{
+            margin-bottom: 15px; /* Margin below each checkbox group*/
+            padding-right: 20px; /* Padding to separate checkbox groups*/
+        }
+        
+        /* Styling for main checkboxes*/
+        .main-checkbox{
+            font-weight: bold; /* Bold font for main checkboxes*/
+            margin-bottom: 5px; /* Margin below each main checkbox*/
+        }
+
+        /* Styling for sub-checkboxes*/
+        .sub-chechbox{
+            margin-left: 20px; /* Indent sub-checkboxes*/
+        }
+
+        /* Styling for headings*/
+        h1 {
+            color: #333; /* Text color of headings*/
+        }
+
+        /* Styling for buttons*/
+        button{
+            padding: 15px; /* Padding inside the button*/
+            margin: 10px; /* Margin around the button*/
+            font-size: 18px; /* Font size of the button text*/
+            cursor: pointer; /* Cursor style on hover*/
+            border-radius: 15px; /* Border radius to create rounded corners*/
+            background-color: #4caf50; /*Background color of the button*/
+            color: white; /* Text color of the button*/
+            border: none; /* No border */
+            outline: none; /* No outline */
+        }
+
+        /* Styling for centered section*/
+        .centered-section{
+            margin: 0 auto; /* Center align the section horizontally*/
+            max-width: 600px; /* Maximum width of the centered section*/
+        }
+
+        /* Styling for right-aligned elements*/
+        .right-align{
+            text-align: right; /* Align text to the right*/
+        }
+
+        /* Styling for centered labels*/
+        .centered-labels{
+            text-align: center; /* Align text to the center*/ 
+        }
+
+        /* Styling for left-aligned elements*/
+        .left-align{
+            text-align: left; /* Align text to the left*/
+            margin-left: 20px; /* Left margin for indentation*/
+        }
+
+        /* Styling for checkboxes on the left*/
+        .checkboxes-left{
+            position: absolute; /* Checkbox positioning*/
+            top: 100px; /* Distance from the top of the page*/
+            left: 20px; /* Distance from the left of the page*/
+        }
+
+        /* Adjust the width of the input elements*/
+        .form-group input[type="text"]{
+            width: 800px; /* set the width of text inputs*/
+            line-height: 10; /* Line height for text inputs*/
+            text-align: left;
+            margin-left: auto;
+        }
+
+        .form-group.smaller-inputs input[type="text"]{
+            width: 800px;
+            line-height: 4;
+            text-align: left;
+            margin-left: auto;
+        }
+
+        .form-group{
+            margin: 0 auto;
+            max-width: 600px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <!--Link to home-->
+            <a href="{{ url_for('home')}}" class="top-right-titles">Home</a>
+            <!--Link to about-->
+            <a href="about.html" class="top-right-titles">About</a>
+        </nav>
+    </header>
+
+    <section>
+        <header>
+            <!--Main title-->
+            <h1> SNP </h1>
+        </header>
+
+        <!--Form for text box-->
+        <form class="centered-labels">
+            <!-- Gene name text box-->
+            <div class="form-group">
+                <label for="Gene name">Gene names:</label>
+                <input type="text" id="Gene name">
+            </div>
+            <!-- SNP ID text box -->
+            <div class="form-group">
+                <label for="SNP ID">SNP IDs:</label>
+                <input type="text" id="SNP ID">
+            </div>
+            <!--Chromosome text box -->
+            <div class="form-group">
+                <label for="chromosome">Chromosome:</label>
+                <input type="text" id="chromosome">
+            </div>
+            <!-- Start position text box -->
+            <div class="form-group">
+                <label for="start">Start position:</label>
+                <input type="text" id="start">
+            </div>
+            <!-- End position text box -->
+            <div class="form-group">
+                <label for="end">End position:</label>
+                <input type="text" id="end">
+            </div>
+        </form>
+
+        <!-- Checkbox groups for population selection-->
+        <div class="checkboxes-left">
+            <label for="population-selection" style="font-weight: bold;">Select which population to include:</label>
+
+            
+            <div class="checkbox-group">
+                <!-- Main checkboxes for selecting populations-->
+                <label class="main-checkbox"><input type="checkbox" name="pop" value="SIB"> SIB (Siberia)</label>
+            </div>
+
+            <div class="checkbox-group">
+                <!-- Main checkboxes for selecting populations-->
+                <label class="main-checkbox"><input type="checkbox" name="pop" value="Africa" onchange="SelectAllSubCheckboxes(this)"> Africa (Africa)</label>
+                <!-- Sub checkboxes for selecting populations-->
+                <label class="sub-chechbox"><input type="checkbox" name="superpop" value="ACB"> ACB (African Caribbean in Barbados)</label>
+                <label class="sub-chechbox"><input type="checkbox" name="superpop" value="ASW"> ASW (African ancestry in southwest US)</label>
+                <label class="sub-chechbox"><input type="checkbox" name="superpop" value="ESN"> ESN (Esan in Nigeria)</label>
+                <label class="sub-chechbox"><input type="checkbox" name="superpop" value="GWD"> GWD (Gambia in Western Division, The Gambia)</label>
+                <label class="sub-chechbox"><input type="checkbox" name="superpop" value="LWK"> LWK (Luhya in Webuye, Kenia)</label>
+                <label class="sub-chechbox"><input type="checkbox" name="superpop" value="MSL"> MSL (Mende in Sierra Leone)</label>
+                <label class="sub-chechbox"><input type="checkbox" name="superpop" value="YRI"> YRI (Yoruba in Ibadan, Nigeria)</label>
+            </div>
+
+            <div class="checkbox-group">
+                <!-- Main checkboxes for selecting populations-->
+                <label class="main-checkbox"><input type="checkbox" name="pop" value="America" onchange="SelectAllSubCheckboxes(this)"> America (America)</label>
+                <!-- Sub checkboxes for selecting populations-->
+                <label class="sub-chechbox"><input type="checkbox" name="superpop" value="CLM"> CLM (Colombia in Medellin)</label>
+                <label class="sub-chechbox"><input type="checkbox" name="superpop" value="MXL"> MXL (Mexican ancestry in LA, California)</label>
+                <label class="sub-chechbox"><input type="checkbox" name="superpop" value="PEL"> PEL (Peruvian in Lima, Peru)</label>
+                <label class="sub-chechbox"><input type="checkbox" name="superpop" value="PUR"> PUR (Puerto Rican in Puerto Rico)</label>
+            </div>
+
+            <div class="checkbox-group">
+                <!-- Main checkboxes for selecting populations-->
+                <label class="main-checkbox"><input type="checkbox" name="pop" value="East Asia" onchange="SelectAllSubCheckboxes(this)"> East Asia (East Asia)</label>
+                <!-- Sub checkboxes for selecting populations-->
+                <label class="sub-chechbox"><input type="checkbox" name="superpop" value="CDX"> CDX (Chinese Dai in Xishuangbanna, China)</label>
+                <label class="sub-chechbox"><input type="checkbox" name="superpop" value="CHB"> CHB (Han Chinese in Beijing, China)</label>
+                <label class="sub-chechbox"><input type="checkbox" name="superpop" value="CHS"> CHS (Southern Han Chinese, China)</label>
+                <label class="sub-chechbox"><input type="checkbox" name="superpop" value="JPT"> JPT (Japanese in Tokyo, Japan)</label>
+                <label class="sub-chechbox"><input type="checkbox" name="superpop" value="KHV"> KHV (Kinh in Hi Chi Minh City, Vietnam)</label>
+            </div>
+
+            <div class="checkbox-group">
+                <!-- Main checkboxes for selecting populations-->
+                <label class="main-checkbox"><input type="checkbox" name="pop" value="Europe" onchange="SelectAllSubCheckboxes(this)"> Europe (Europe)</label>
+                <!-- Sub checkboxes for selecting populations-->
+                <label class="sub-chechbox"><input type="checkbox" name="superpop" value="CEU"> CEU (Utah residents with Northern and Western European ancestry)</label>
+                <label class="sub-chechbox"><input type="checkbox" name="superpop" value="FIN"> FIN (Finnish in Finland)</label>
+                <label class="sub-chechbox"><input type="checkbox" name="superpop" value="GBR"> GBR (British in England and South Scotland)</label>
+                <label class="sub-chechbox"><input type="checkbox" name="superpop" value="IBS"> IBS (Iberian Population in Spain)</label>
+                <label class="sub-chechbox"><input type="checkbox" name="superpop" value="TSI"> TSI (Toscani in Italy)</label>
+            </div>
+
+            <div class="checkbox-group">
+                <!-- Main checkboxes for selecting populations-->
+                <label class="main-checkbox"><input type="checkbox" name="pop" value="South Asia" onchange="SelectAllSubCheckboxes(this)"> South Asia (South Asia)</label>
+                <!-- Sub checkboxes for selecting populations-->
+                <label class="sub-chechbox"><input type="checkbox" name="superpop" value="BEB"> BEB (Bengali in Bangladesh)</label>
+                <label class="sub-chechbox"><input type="checkbox" name="superpop" value="GIH"> GIH (Gujarati Indian in Houston Texas,TX)</label>
+                <label class="sub-chechbox"><input type="checkbox" name="superpop" value="ITU"> ITU (Indian Telugu in the UK)</label>
+                <label class="sub-chechbox"><input type="checkbox" name="superpop" value="PJL"> PJL (Punjabi in Lahore, Pakistan)</label>
+                <label class="sub-chechbox"><input type="checkbox" name="superpop" value="STU"> STU (Sri Lankan Tamil in the UK)</label>
+            </div>
+
+        </div>
+
+        <!-- Button for confirming analysis-->
+        <div class="right-align">
+            <a href="{{ url_for('result_snp') }}"><button onclick="confirmAnalysis()">Confirm</button></a>
+        </div>
+    </section>
+
+    <script>
+        // Function to select all sub-checkboxes when the main checkbox is selected
+        function selectAllSubCheckboxes(mainCheckbox) {
+            //Get the main checkbox group
+            var checkboxGroup = mainCheckbox.closest('.checkbox-group');
+            //Get all sub-checkboxes within the same checkbox group
+            var subCheckboxes = checkboxGroup.querySelectorAll('.sub-checkbox input[type="checkbox"]');
+            //Loop through each sub-checkbox and set it's checked state to match the state of the main checkbox
+            subCheckboxes.forEach(function(subCheckbox) {
+                subCheckbox.checked = mainCheckbox.checked;
+            });
+        }
+
+        function disableOtherInputs(inputType){
+            var inputFields = document.querySelectorAll('input[type="text"]');
+            inputFields,forEach(function(field) {
+                if (field.id !== inputType){
+                    field.disabled=true;
+                } else {
+                    field.disabled = false;
+                }
+             });
+        }
+
+        function disableGeneAndSNPInputs() {
+            var geneNameInput = document.getElementById('Gene name');
+            var snpIdInput = document.getElementById('SNP ID');
+
+            geneNameInput.disabled=true;
+            snpIdInput.disabled=true;
+        }
+
+        // Function for confirming analysis
+        function confirmAnalysis() {
+            alert("SNP Analysis Confirmed");
+        }
+    </script>
+
+</body>
+</html>
