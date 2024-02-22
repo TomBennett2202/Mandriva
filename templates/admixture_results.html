@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admixture Results</title>
+    <style>
+        /* Add some basic styling */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            background-color: #c5db83;
+            color: #333;
+            padding: 10px;
+            text-align: center;
+        }
+        .plot {
+            width: 90%;
+            margin: 20px auto;
+        }
+        .home-button {
+            display: block;
+            width: 100px;
+            padding: 10px;
+            margin: 20px auto;
+            background-color: #69d6de;
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Admixture Analysis Results</h1>
+        <!-- Link to go back to the home page -->
+        <a href="{{ url_for('home') }}" class="home-button">Home</a>
+    </header>
+
+    <!-- Matplotlib chart will be inserted here -->
+    <div class="plot">
+        <img src="data:image/png;base64,{{ plot_url }}" alt="Admixture Proportions">
+    </div>
+
+</body>
+</html>
