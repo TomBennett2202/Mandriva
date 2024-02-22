@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>PCA Plot</title>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <style>
+        /* Style for the Home button */
+        .home-button {
+            display: inline-block;
+            padding: 10px 20px;
+            margin-right: 20px;
+            font-size: 17px;
+            color: rgb(10, 9, 28);
+            background-color: #69d6de; /* background */
+            text-decoration: none;
+            border-radius: 5px;
+            position: absolute; /* Positioning relative to nearest positioned ancestor or to the document body itself */
+            top: 20px;
+            right: 20px; /* Place it on the right side */
+            cursor: pointer;
+        }
+
+        .home-button:hover {
+            background-color: #55b0f1; /* Darker shade for hover effect */
+        }
+
+        /* Ensure the container for the plot doesn't overlap the home button */
+        #plot-container {
+            padding-top: 70px; /* Adjust this value as needed */
+        }
+    </style>
+</head>
+<body>
+    <!-- Home button -->
+    <a href="{{ url_for('home') }}" class="home-button">Home</a>
+
+    <!-- Container for the plot to ensure it doesn't overlap with the home button -->
+    <div id="plot-container">
+        <h1>PCA Plot</h1>
+        {{ plot_div|safe }}
+    </div>
+
+    <!-- Scripts can be included here if needed -->
+</body>
+</html>
