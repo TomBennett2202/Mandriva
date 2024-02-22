@@ -6,11 +6,13 @@ import pandas as pd
 import numpy as np
 import sqlite3
 import matplotlib.pyplot as plt
+import matplotlib
+matplotlib.use('agg')
 import numpy as np
 import base64
 from io import BytesIO
 
-DATABASE = r'path\to\mandriva_database.db' #keep the r as it should read the db
+DATABASE = r'/your/file/path/mandriva_database.db' #keep the r as it should read the db
 
 def query_db(query, args=(), one=False):
     con = sqlite3.connect(DATABASE)
@@ -31,9 +33,20 @@ def home():
 def analysis():
     return render_template('analysis.html')
 
-@app.route('/snp')
+@app.route('/snp', methods=['GET', 'POST'])
 def snp():
-    return render_template('snp.html')
+    if request.method == 'POST':
+        selected_populations = request.form.getlist('pop[]')# Ensure the form has a 'population' input
+        return redirect(url_for('result_snp', populations=','.join(selected_populations)))
+    else:
+        return render_template('snp.html')
+
+@app.route('/result_snp/<populations>')
+def result_snp(populations):
+    population_list = populations.split(',')  # Split the populations back into a list
+    placeholders = ','.join('?' for _ in population_list)  # Create placeholders for query parameters
+    return render_template('result_snp.html')
+
 
 @app.route('/cluster', methods=['GET', 'POST'])
 def cluster():
@@ -98,19 +111,19 @@ def admixture():
             FROM RESULTS 
             WHERE POPULATION IN ({placeholders});
         '''
-        
+
         # Connect to the SQLite database
         conn = sqlite3.connect(DATABASE)
         cursor = conn.cursor()
-        
+
         # Execute the query and fetch the results into a pandas DataFrame
         cursor.execute(query, selected_populations)
         df = pd.DataFrame(cursor.fetchall(), columns=['K1', 'K2', 'K3', 'K4', 'K5'])
-        
+
         # Close the cursor and connection
         cursor.close()
         conn.close()
-        
+
         # Prepare the data for plotting
         k_values = df.values
 
@@ -146,23 +159,10 @@ def admixture():
         return render_template('admixture.html')
 
 
-
-
-
 @app.route('/admixture_results')
 def admixture_results():
     # Your code to present the results goes here
     return render_template('admixture_results.html')
-
-@app.route('/result_analysis')
-def result_analysis():
-    return render_template('result_analysis.html')
-
-
-@app.route('/result_snp')
-def result_snp():
-    return render_template('result_snp.html')
-
 
 @app.route('/download')
 def download_file():

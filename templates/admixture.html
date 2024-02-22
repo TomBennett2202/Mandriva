@@ -65,7 +65,7 @@
         }
 
         /* Styling for sub-checkboxes*/
-        .sub-chechbox{
+        .sub-checkbox{
             margin-left: 20px; /* Indent sub-checkboxes*/
         }
 
@@ -114,97 +114,90 @@
         <h1> Admixture Analysis </h1>
     </header>
 
-    <section>
+    <section class="centered-section">
         <form action="{{url_for('admixture') }}" method="post">
-        <!-- Checkbox groups for population selection-->
-        <label for="population-selection" style="font-weight: bold;">Select which population to include:</label>
+            <!-- Checkbox groups for population selection -->
+            <label for="population-selection" style="font-weight: bold;">Select which population to include:</label>
 
-        <div class="checkbox-group">
-            <!-- Main checkboxes for selecting populations-->
-            <label class="main-checkbox"><input type="checkbox" name="pop[]" value="SIB"> SIB (Siberia)</label>
-        </div>
+            <div class="checkbox-group">
+                <!-- Main checkboxes for selecting populations -->
+                <label class="main-checkbox"><input type="checkbox" name="pop[]" value="SIB"> SIB (Siberia)</label>
+            </div>
 
-        <div class="checkbox-group">
-            <!-- Main checkboxes for selecting populations-->
-            <label class="main-checkbox"><input type="checkbox" name="pop[]" value="Africa" onchange="selectAllSubCheckboxes(this)"> Africa (Africa)</label>
-            <!-- Sub checkboxes for selecting populations-->
-            <label class="sub-checkbox"><input type="checkbox" name="pop[]" value="ACB"> ACB (African Caribbean in Barbados)</label>
-            <label class="sub-checkbox"><input type="checkbox" name="pop[]" value="ASW"> ASW (African ancestry in southwest US)</label>
-            <label class="sub-checkbox"><input type="checkbox" name="pop[]" value="ESN"> ESN (Esan in Nigeria)</label>
-            <label class="sub-checkbox"><input type="checkbox" name="pop[]" value="GWD"> GWD (Gambia in Western Division, The Gambia)</label>
-            <label class="sub-checkbox"><input type="checkbox" name="pop[]" value="LWK"> LWK (Luhya in Webuye, Kenia)</label>
-            <label class="sub-checkbox"><input type="checkbox" name="pop[]" value="MSL"> MSL (Mende in Sierra Leone)</label>
-            <label class="sub-checkbox"><input type="checkbox" name="pop[]" value="YRI"> YRI (Yoruba in Ibadan, Nigeria)</label>
-        </div>
+            <div class="checkbox-group">
+                <!-- Main checkboxes for selecting populations-->
+                <label class="main-checkbox"><input type="checkbox" name="superpop" value="Africa" onchange="selectAllSubCheckboxes(this)"> Africa (Africa)</label>
+                <!-- Sub checkboxes for selecting populations-->
+                <label class="sub-checkbox"><input type="checkbox" name="pop[]" value="ACB"> ACB (African Caribbean in Barbados)</label>
+                <label class="sub-checkbox"><input type="checkbox" name="pop[]" value="ASW"> ASW (African ancestry in southwest US)</label>
+                <label class="sub-checkbox"><input type="checkbox" name="pop[]" value="ESN"> ESN (Esan in Nigeria)</label>
+                <label class="sub-checkbox"><input type="checkbox" name="pop[]" value="GWD"> GWD (Gambia in Western Division, The Gambia)</label>
+                <label class="sub-checkbox"><input type="checkbox" name="pop[]" value="LWK"> LWK (Luhya in Webuye, Kenia)</label>
+                <label class="sub-checkbox"><input type="checkbox" name="pop[]" value="MSL"> MSL (Mende in Sierra Leone)</label>
+                <label class="sub-checkbox"><input type="checkbox" name="pop[]" value="YRI"> YRI (Yoruba in Ibadan, Nigeria)</label>
+            </div>
 
-        <div class="checkbox-group">
-            <!-- Main checkboxes for selecting populations-->
-            <label class="main-checkbox"><input type="checkbox" name="pop[]" value="America" onchange="selectAllSubCheckboxes(this)"> America (America)</label>
-            <!-- Sub checkboxes for selecting populations-->
-            <label class="sub-checkbox"><input type="checkbox" name="pop[]" value="CLM"> CLM (Colombia in Medellin)</label>
-            <label class="sub-checkbox"><input type="checkbox" name="pop[]" value="MXL"> MXL (Mexican ancestry in LA, California)</label>
-            <label class="sub-checkbox"><input type="checkbox" name="pop[]" value="PEL"> PEL (Peruvian in Lima, Peru)</label>
-            <label class="sub-checkbox"><input type="checkbox" name="pop[]" value="PUR"> PUR (Puerto Rican in Puerto Rico)</label>
-        </div>
+            <div class="checkbox-group">
+                <!-- Main checkboxes for selecting populations-->
+                <label class="main-checkbox"><input type="checkbox" name="superpop" value="America" onchange="selectAllSubCheckboxes(this)"> America (America)</label>
+                <!-- Sub checkboxes for selecting populations-->
+                <label class="sub-checkbox"><input type="checkbox" name="pop[]" value="CLM"> CLM (Colombia in Medellin)</label>
+                <label class="sub-checkbox"><input type="checkbox" name="pop[]" value="MXL"> MXL (Mexican ancestry in LA, California)</label>
+                <label class="sub-checkbox"><input type="checkbox" name="pop[]" value="PEL"> PEL (Peruvian in Lima, Peru)</label>
+                <label class="sub-checkbox"><input type="checkbox" name="pop[]" value="PUR"> PUR (Puerto Rican in Puerto Rico)</label>
+            </div>
 
-        <div class="checkbox-group">
-            <!-- Main checkboxes for selecting populations-->
-            <label class="main-checkbox"><input type="checkbox" name="pop[]" value="East Asia" onchange="selectAllSubCheckboxes(this)"> East Asia (East Asia)</label>
-            <!-- Sub checkboxes for selecting populations-->
-            <label class="sub-checkbox"><input type="checkbox" name="pop[]" value="CDX"> CDX (Chinese Dai in Xishuangbanna, China)</label>
-            <label class="sub-checkbox"><input type="checkbox" name="pop[]" value="CHB"> CHB (Han Chinese in Beijing, China)</label>
-            <label class="sub-checkbox"><input type="checkbox" name="pop[]" value="CHS"> CHS (Southern Han Chinese, China)</label>
-            <label class="sub-checkbox"><input type="checkbox" name="pop[]" value="JPT"> JPT (Japanese in Tokyo, Japan)</label>
-            <label class="sub-checkbox"><input type="checkbox" name="pop[]" value="KHV"> KHV (Kinh in Hi Chi Minh City, Vietnam)</label>
-        </div>
+            <div class="checkbox-group">
+                <!-- Main checkboxes for selecting populations-->
+                <label class="main-checkbox"><input type="checkbox" name="superpop" value="East Asia" onchange="selectAllSubCheckboxes(this)"> East Asia (East Asia)</label>
+                <!-- Sub checkboxes for selecting populations-->
+                <label class="sub-checkbox"><input type="checkbox" name="pop[]" value="CDX"> CDX (Chinese Dai in Xishuangbanna, China)</label>
+                <label class="sub-checkbox"><input type="checkbox" name="pop[]" value="CHB"> CHB (Han Chinese in Beijing, China)</label>
+                <label class="sub-checkbox"><input type="checkbox" name="pop[]" value="CHS"> CHS (Southern Han Chinese, China)</label>
+                <label class="sub-checkbox"><input type="checkbox" name="pop[]" value="JPT"> JPT (Japanese in Tokyo, Japan)</label>
+                <label class="sub-checkbox"><input type="checkbox" name="pop[]" value="KHV"> KHV (Kinh in Hi Chi Minh City, Vietnam)</label>
+            </div>
 
-        <div class="checkbox-group">
-            <!-- Main checkboxes for selecting populations-->
-            <label class="main-checkbox"><input type="checkbox" name="pop[]" value="Europe" onchange="selectAllSubCheckboxes(this)"> Europe (Europe)</label>
-            <!-- Sub checkboxes for selecting populations-->
-            <label class="sub-checkbox"><input type="checkbox" name="pop[]" value="CEU"> CEU (Utah residents with Northern and Western European ancestry)</label>
-            <label class="sub-checkbox"><input type="checkbox" name="pop[]" value="FIN"> FIN (Finnish in Finland)</label>
-            <label class="sub-checkbox"><input type="checkbox" name="pop[]" value="GBR"> GBR (British in England and South Scotland)</label>
-            <label class="sub-checkbox"><input type="checkbox" name="pop[]" value="IBS"> IBS (Iberian Population in Spain)</label>
-            <label class="sub-checkbox"><input type="checkbox" name="pop[]" value="TSI"> TSI (Toscani in Italy)</label>
-        </div>
+            <div class="checkbox-group">
+                <!-- Main checkboxes for selecting populations-->
+                <label class="main-checkbox"><input type="checkbox" name="superpop" value="Europe" onchange="selectAllSubCheckboxes(this)"> Europe (Europe)</label>
+                <!-- Sub checkboxes for selecting populations-->
+                <label class="sub-checkbox"><input type="checkbox" name="pop[]" value="CEU"> CEU (Utah residents with Northern and Western European ancestry)</label>
+                <label class="sub-checkbox"><input type="checkbox" name="pop[]" value="FIN"> FIN (Finnish in Finland)</label>
+                <label class="sub-checkbox"><input type="checkbox" name="pop[]" value="GBR"> GBR (British in England and South Scotland)</label>
+                <label class="sub-checkbox"><input type="checkbox" name="pop[]" value="IBS"> IBS (Iberian Population in Spain)</label>
+                <label class="sub-checkbox"><input type="checkbox" name="pop[]" value="TSI"> TSI (Toscani in Italy)</label>
+            </div>
 
-        <div class="checkbox-group">
-            <!-- Main checkboxes for selecting populations-->
-            <label class="main-checkbox"><input type="checkbox" name="pop[]" value="South Asia" onchange="selectAllSubCheckboxes(this)"> South Asia (South Asia)</label>
-            <!-- Sub checkboxes for selecting populations-->
-            <label class="sub-checkbox"><input type="checkbox" name="pop[]" value="BEB"> BEB (Bengali in Bangladesh)</label>
-            <label class="sub-checkbox"><input type="checkbox" name="pop[]" value="GIH"> GIH (Gujarati Indian in Houston Texas,TX)</label>
-            <label class="sub-checkbox"><input type="checkbox" name="pop[]" value="ITU"> ITU (Indian Telugu in the UK)</label>
-            <label class="sub-checkbox"><input type="checkbox" name="pop[]" value="PJL"> PJL (Punjabi in Lahore, Pakistan)</label>
-            <label class="sub-checkbox"><input type="checkbox" name="pop[]" value="STU"> STU (Sri Lankan Tamil in the UK)</label>
-        </div>
-
-        <!-- Button for confirming analysis-->
-        <div class="right-align">
-            <a href="{{ url_for('admixture_results') }}"><button onclick="confirmAnalysis()">Confirm</button></a>
-        </div>
+            <div class="checkbox-group">
+                <!-- Main checkboxes for selecting populations-->
+                <label class="main-checkbox"><input type="checkbox" name="superpop" value="South Asia" onchange="selectAllSubCheckboxes(this)"> South Asia (South Asia)</label>
+                <!-- Sub checkboxes for selecting populations-->
+                <label class="sub-checkbox"><input type="checkbox" name="pop[]" value="BEB"> BEB (Bengali in Bangladesh)</label>
+                <label class="sub-checkbox"><input type="checkbox" name="pop[]" value="GIH"> GIH (Gujarati Indian in Houston Texas,TX)</label>
+                <label class="sub-checkbox"><input type="checkbox" name="pop[]" value="ITU"> ITU (Indian Telugu in the UK)</label>
+                <label class="sub-checkbox"><input type="checkbox" name="pop[]" value="PJL"> PJL (Punjabi in Lahore, Pakistan)</label>
+                <label class="sub-checkbox"><input type="checkbox" name="pop[]" value="STU"> STU (Sri Lankan Tamil in the UK)</label>
+            </div>
+                <!-- Button for confirming analysis -->
+            <div class="right-align">
+                <button type="submit">Confirm</button>
+            </div>
+        </form>
     </section>
 
-    <!--JavaScript-->
+    <!-- JavaScript -->
     <script>
         // Function to select all sub-checkboxes when the main checkbox is selected
         function selectAllSubCheckboxes(mainCheckbox) {
-            //Get the main checkbox group
+            // Get the main checkbox group
             var checkboxGroup = mainCheckbox.closest('.checkbox-group');
-            //Get all sub-checkboxes within the same checkbox group
+            // Get all sub-checkboxes within the same checkbox group
             var subCheckboxes = checkboxGroup.querySelectorAll('.sub-checkbox input[type="checkbox"]');
-            //Loop through each sub-checkbox and set it's checked state to match the state of the main checkbox
+            // Loop through each sub-checkbox and set its checked state to match the state of the main checkbox
             subCheckboxes.forEach(function(subCheckbox) {
                 subCheckbox.checked = mainCheckbox.checked;
             });
         }
-
-        // Function for confirming analysis
-        function confirmAnalysis() {
-            alert("Admixture Analysis Confirmed");
-        }
     </script>
-
 </body>
-</html>
