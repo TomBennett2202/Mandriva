@@ -1,95 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!--Meta tags-->
+    <!-- Document metadata -->
     <meta charset="UTF-8">
-    <Meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!--Title of the webpage-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Title of the page -->
     <title>Mandriva Website</title>
     <!--CSS-->
-    <style>
-        /* Styling for the body */
-        body{
-            font-family: Arial, sans-serif; /* Font for text */
-            margin: 0; /* Remove default margin */
-            padding: 0; /* Remove default padding */
-            background-image: url('{{ url_for('static', filename='DALLE.webp') }}'); /* Background image */
-            background-size: cover; /* Cover the entire page */
-            background-repeat: no-repeat; /* Do not repeat the image */
-            background-attachment: fixed; /* Keep the image fixed during scroll */
-        }
 
-        /*Styling for the header*/
-        header {
-            background-color: #A8E2E6; /* Background color of the header with transparency */
-            color: #030000; /* Text color of the header*/
-            padding: 10px; /* Padding inside the header */
-            text-align: right; /* Align text to the right */
-        }
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
-        /* Styling for the top-right navigation links*/
-        .top-right-titles {
-            font-size: 16px; /* Font size of the navigation links */
-            margin-right: 10px; /* Margin between navigation links */
-            color: #030000; /* Text color of the navigation links*/
-        }
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
-        /* Styling for the navigation section */
-        nav{
-            display: flex; /* Use flexbox for layout*/
-            justify-content: flex-end; /* Align titles to the right*/
-            align-items: center; /* Align items vertically in the center*/
-            padding: 10px; /* Padding inside the navigation section*/
-            background-color: #A8E2E6; /* Background color of the navigation section with transparency */
-        }
-
-        /* Styling for the main content section */
-        section{
-            text-align: center; /* Align text to the center*/
-            padding: 20px; /*Padding inside the section*/
-            background-color: rgba(168, 226, 230, 0.8); /* Semi-transparent white background */
-            margin: 30px; /* Margin around the section */
-            border-radius: 15px; /* Rounded corners for the section */
-        }
-
-        /* Styling for the main title */
-        h1{
-            color: #070101; /* Text color of the main title*/
-        }
-
-        /* Styling for buttons */
-        button{
-            padding: 15px; /* Padding inside the button*/
-            margin: 10px; /*Margin around the button*/
-            font-size: 18px; /* Font size of the button text*/
-            cursor: pointer; /* Cursor style on hover*/
-            border-radius: 15px; /* Border radius to create rounded corners */
-            background-color: #333; /* Background color of the button */
-            color: white; /* Text color of the button */
-            border: none; /* No border */
-            outline: none; /* No outline */
-        }
-    </style>
 </head>
+
 <body>
+    <nav class="navbar-expand-lg navbar-dark" style="background-color: #523f78d9; height: 50px; font-size: 20px;">
+        <div class="collapse navbar-collapse font-weight-light" id="navbarNavAltMarkup">
+            <div class="navbar-nav" >
+                <a class="nav-item active nav-link " href="/">Home <span class="sr-only"></span></a>
+                <a class="nav-item  active nav-link" href="https://github.com/TomBennett2202/Mandriva">About</a>
+            </div>
+        </div>
+    </nav>
 
-    <!-- Header section -->
-    <header>
-        <!-- Navigation links -->
-        <nav>
-            <a href="{{ url_for('home')}}" class="top-right-titles">Home</a>
-            <a href="https://github.com/TomBennett2202/Mandriva" class="top-right-titles" target="_blank">About</a>
-        </nav>
-    </header>
+    <br>
+    <h1 class="text-center display-3"> Mandriva</h1>
 
-    <!-- Main content section -->
-    <section>
-        <!-- Main title -->
-        <h1> Mandriva </h1>
-        <!-- Buttons for navigation -->
-        <a href="{{ url_for('analysis')}}"><button>Analysis</button></a>
-        <a href="{{ url_for('snp') }}"><button>SNP</button></a>
-    </section>
+    <div class="d-flex justify-content-center">
+        <a href="{{ url_for('analysis')}}" class="mx-2"><button class="btn btn-dark btn-lg">Analysis</button></a>
+        <a href="{{ url_for('snp') }}" class="mx-2"><button class="btn btn-dark btn-lg">SNP</button></a>
+    </div>
 
 </body>
 </html>

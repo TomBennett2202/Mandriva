@@ -1,25 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!--Document metadata-->
+    <!-- Document metadata -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!--Title of the page-->
-    <title>PCA Plot</title>
+    <!-- Title of the page -->
+    <title>ERROR</title>
 
-    <!--CSS-->
+    <!-- CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
-    <!-- jQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
 
 </head>
 <body>
-
+    <!-- Navbar -->
     <nav class="navbar-expand-lg navbar-dark" style="background-color: #523f78d9; height: 50px; font-size: 20px;">
         <div class="collapse navbar-collapse font-weight-light" id="navbarNavAltMarkup">
             <div class="navbar-nav" >
@@ -29,16 +27,23 @@
         </div>
     </nav>
 
-    <br>
-    <h1 class="text-center display-3"> Results</h1>
-
-    <!--PCA plot-->
-    <div class="container text-center">
-        {{ plot_div|safe }}
-        <label class="display-4">PC1: 52% Variance Explained, PC2: 16% Variance Explained</label>
+    <div class="container">
+        <div class="row justify-content-center mt-5">
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="card-header">
+                        <!-- Adjusted the font size to 'display-4' class -->
+                        <h3 class="text-danger display-4">Error</h3>
+                    </div>
+                    <div class="card-body">
+                        <!-- Adjusted the font size to 'lead' class -->
+                        <p class="lead">{{ error_message }}</p>
+                        <p><a href="{{ url_for('snp') }}" class="btn btn-dark btn-lg">Go back to the SNP page</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-
-
 
 </body>
 </html>

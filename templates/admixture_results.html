@@ -1,50 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!--Document metadata-->
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admixture Results</title>
-    <style>
-        /* Add some basic styling */
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-        }
-        header {
-            background-color: #c5db83;
-            color: #333;
-            padding: 10px;
-            text-align: center;
-        }
-        .plot {
-            width: 90%;
-            margin: 20px auto;
-        }
-        .home-button {
-            display: block;
-            width: 100px;
-            padding: 10px;
-            margin: 20px auto;
-            background-color: #69d6de;
-            color: white;
-            text-align: center;
-            text-decoration: none;
-            border-radius: 5px;
-        }
-    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--Title of the page-->
+    <title>ADMIXTURE Plot</title>
+
+    <!--CSS-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+
 </head>
 <body>
 
-    <header>
-        <h1>Admixture Analysis Results</h1>
-        <!-- Link to go back to the home page -->
-        <a href="{{ url_for('home') }}" class="home-button">Home</a>
-    </header>
+    <nav class="navbar-expand-lg navbar-dark" style="background-color: #523f78d9; height: 50px; font-size: 20px;">
+        <div class="collapse navbar-collapse font-weight-light" id="navbarNavAltMarkup">
+            <div class="navbar-nav" >
+                <a class="nav-item active nav-link " href="/">Home <span class="sr-only"></span></a>
+                <a class="nav-item  active nav-link" href="https://github.com/TomBennett2202/Mandriva">About</a>
+            </div>
+        </div>
+    </nav>
 
-    <!-- Matplotlib chart will be inserted here -->
-    <div class="plot">
+    <br>
+    <h1 class="text-center display-3"> Results</h1>
+
+
+    <div class="container text-center">
         <img src="data:image/png;base64,{{ plot_url }}" alt="Admixture Proportions">
     </div>
 

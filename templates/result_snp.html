@@ -3,64 +3,99 @@
 <head>
     <!--Document metadata-->
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
     <!--Title of the page-->
     <title>Results</title>
+
     <!--CSS-->
-    <style>
-        /* Styling for the body*/
-        body{
-            text-align: center; /* Align text to the center*/
-            font-family: Arial, sans-serif; /* Font for text */
-            background-color: #f4f4f4; /* Background color of the body*/
-        }
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
-        /*Styling for the top-right navigation links*/
-        .top-right-titles {
-            font-size: 16px; /* Font size of the navigation links*/
-            margin-right: 10px; /* Margin between navigation links*/
-            color: #333; /*Text color of the navigation links*/
-        }
+    <!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <!-- Search functionality -->
+    <script>
+        $(document).ready(function(){
+            $("#myInput").on("keyup", function() {
+                var value = $(this).val().toLowerCase();
+                $("#myTable tr").filter(function() {
+                    $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1);
+                });
+            });
+        });
+    </script>
 
-        /* Styling for the navigation bar*/
-        nav{
-            display: flex; /*flexbox for layout*/
-            justify-content: flex-end; /* Align titles to the right*/
-            align-items: center; /*Align items vertically in the center*/
-            padding: 10px; /* Padding inside the navigation section*/
-            background-color: #f4f4f4; /*Background color of the navigation section */
-        }
-
-        /* Styling for headings*/
-        h1{
-            color: #333; /* Text color of headings*/
-        }
-
-        /* Styling for buttons*/
-        #downloadButton{
-            color: white; /* Text color of the button*/
-            background-color: red; /*Background color of the button*/
-            padding: 10px 20px; /* Padding inside the button*/
-            border-radius: 5px; /* Border radius to create rounded corners*/
-            cursor: pointer; /* Cursor style on hover*/
-            margin-left: 800px; /* Margin to position the button*/
-        }
-    </style>
 </head>
-<body>
-    <header>
-        <nav>
-            <!--Link to home-->
-            <a href="{{ url_for('home') }}" class="top-right-titles">Home</a>
-            <!--Link to about-->
-            <a href="about.html" class="top-right-titles">About</a>
-        </nav>
-    </header>
 
-    <!--Main title-->
-    <h1>Results</h1>
-    <!--Button for downloading-->
-    <a id="downloadButton" href="{{ url_for('download_file')}}">Download</a>
-    
+<body>
+    <nav class="navbar-expand-lg navbar-dark" style="background-color: #523f78d9; height: 50px; font-size: 20px;">
+        <div class="collapse navbar-collapse font-weight-light" id="navbarNavAltMarkup">
+            <div class="navbar-nav" >
+                <a class="nav-item active nav-link " href="/">Home <span class="sr-only"></span></a>
+                <a class="nav-item  active nav-link" href="https://github.com/TomBennett2202/Mandriva">About</a>
+            </div>
+        </div>
+    </nav>
+
+    <br>
+    <h1 class="text-center display-3"> Results</h1>
+
+    <!-- Button for downloading -->
+    <div class="text-center mt-3">
+        <a id="downloadButton" href="{{ url_for('download_fst_matrix')}}" class="btn btn-dark">Download</a>
+    </div>
+
+    <!-- Heatmap image -->
+    {% if heatmap_data %}
+        <div class="img-fluid">
+            <img src="data:image/png;base64,{{ heatmap_data }}" alt="Pairwise FST Matrix" class="img-fluid mx-auto d-block">
+        </div>
+    {% endif %}
+
+    <div class="container">
+        <input class="form-control" id="myInput" type="text" placeholder="Search..">
+        <br>
+
+        <!-- Your table with ID "myTable" for filtering -->
+        <table class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                    <th>SNP</th>
+                    <th>RS ID</th>
+                    <th>Reference Allele Frequency</th>
+                    <th>Alternate Allele Frequency</th>
+                    <th>Genotype Frequency 1</th>
+                    <th>Genotype Frequency 2</th>
+                    <th>Genotype Frequency 3</th>
+                    <th>Clinical Significances</th>
+                    <th>Disease Names</th>
+                </tr>
+            </thead>
+            <tbody id="myTable">
+                {% for snp, data in combined_data.items() %}
+                    <tr>
+                        <td>{{ snp }}</td>
+                        <td>{{ data.get('rs_id', '') }}</td>
+                        <td>{{ data['allele_freqs'][0] }}</td>
+                        <td>{{ data['allele_freqs'][1] }}</td>
+                        {% if 'genotype_freqs' in data %}
+                            <td>{{ data['genotype_freqs'][0] }}</td>
+                            <td>{{ data['genotype_freqs'][1] }}</td>
+                            <td>{{ data['genotype_freqs'][2] }}</td>
+                        {% else %}
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        {% endif %}
+                        <td>{{ ', '.join(data['clinical_significances']) }}</td>
+                        <td>{{ ', '.join(data['disease_names']) }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+     </div>
+
 </body>
 </html>
