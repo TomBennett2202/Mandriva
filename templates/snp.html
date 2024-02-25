@@ -84,6 +84,14 @@
             }
         }
 
+        function updateDownloadButtonVisibility() {
+            var selectedPopulations = document.querySelectorAll('input[name="pop[]"]:checked');
+            var downloadButton = document.getElementById('downloadButton');
+
+            // If more than one population is selected, show the download button; otherwise, hide it
+            downloadButton.style.display = selectedPopulations.length > 1 ? 'block' : 'none';
+        }
+
     </script>
 
     <style>

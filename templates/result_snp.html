@@ -25,6 +25,16 @@
                 });
             });
         });
+
+        // Fetch the selected populations count from the backend (assuming it's passed in the render_template)
+        var selectedPopulationsCount = {{ selected_populations_count|default(0) }};
+
+        // Update download button visibility based on the count
+        document.addEventListener('DOMContentLoaded', function () {
+            var downloadButton = document.getElementById('downloadButton');
+            downloadButton.style.display = selectedPopulationsCount > 1 ? 'block' : 'none';
+        });
+
     </script>
 
 </head>
