@@ -12,7 +12,7 @@ import secrets
 import numpy as np
 import seaborn as sns
 
-DATABASE = r'/Users/tombennett/database/mandriva_database.db' #this is the file path to read the database
+DATABASE = r'/mandriva_database.db' #this is the file path to read the database
 
 app = Flask(__name__)
 
