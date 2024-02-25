@@ -16,7 +16,12 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
-
+    <!--Custom styles-->
+    <style>
+        .variance-text {
+            color: rgb(120, 26, 151);
+        }
+    </style>
 </head>
 <body>
 
@@ -35,7 +40,7 @@
     <!--PCA plot-->
     <div class="container text-center">
         {{ plot_div|safe }}
-        <label class="display-4">PC1: 52% Variance Explained, PC2: 16% Variance Explained</label>
+        <label class="display-4 variance-text">PC1: 52% Variance Explained, PC2: 16% Variance Explained</label>
     </div>
 
 
