@@ -8,7 +8,6 @@ from plotly.offline import plot
 matplotlib.use('agg')
 import base64
 from io import BytesIO
-import secrets
 import numpy as np
 import seaborn as sns
 
@@ -352,7 +351,7 @@ def snp():
             else:
                 # Handle the case where less than 2 populations are selected
                 return render_template('result_snp.html', combined_data=combined_data, heatmap_data=None)
-        except ValueError:
+        except (ValueError, sqlite3.OperationalError):
             # Handle the case where no data is available
             error_message = "No data found matching the provided input. Please try again with different values."
             return render_template('error_page.html', error_message=error_message)
