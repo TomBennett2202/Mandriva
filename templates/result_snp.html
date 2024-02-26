@@ -31,7 +31,6 @@
 
         // Update download button visibility based on the count
         document.addEventListener('DOMContentLoaded', function () {
-            console.log('Selected Populations Count:', selectedPopulationsCount);
             var downloadButton = document.getElementById('downloadButton');
             downloadButton.style.display = selectedPopulationsCount > 1 ? 'inline-block' : 'none';
         });
