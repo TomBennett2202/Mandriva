@@ -344,13 +344,14 @@ def snp():
                     plt.close()
 
                     # Pass the image data to the template
-                    return render_template('result_snp.html', combined_data=combined_data, heatmap_data=img_data)
+                    return render_template('result_snp.html', combined_data=combined_data, heatmap_data=img_data, selected_populations_count=len(selected_populations))
+
                 else:
                     # Handle the case where result_matrix is empty
-                    return render_template('result_snp.html', combined_data=combined_data, heatmap_data=None)
+                    return render_template('result_snp.html', combined_data=combined_data, heatmap_data=None, selected_populations_count=len(selected_populations))
             else:
                 # Handle the case where less than 2 populations are selected
-                return render_template('result_snp.html', combined_data=combined_data, heatmap_data=None)
+                return render_template('result_snp.html', combined_data=combined_data, heatmap_data=None, selected_populations_count=len(selected_populations))
         except (ValueError, sqlite3.OperationalError):
             # Handle the case where no data is available
             error_message = "No data found matching the provided input. Please try again with different values."
