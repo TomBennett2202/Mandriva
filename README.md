@@ -18,5 +18,11 @@ Mandriva is a genomic analysis web application that displays SNP variation and p
 * Please ensure that the mandriva_database.db and app.py are in the same folder while running the app.
 If you wish to change the database directory, you should also change the *DATABASE* path in the application.
 
+*The app can be run in the Command Line, Visual Studio Code and PyCharm.
+
+
+## Developers
+This web application was designed and developed by [Thomas Bennette](https://github.com/TomBennett2202), [Melika Abdi](https://github.com/meliabdi), [Niya Louis](https://github.com/Niyalouis) & [Adam Brachtl](https://github.com/ABrachtl)
+
 
 
