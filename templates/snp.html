@@ -47,11 +47,6 @@
             snpIdInput.disabled = true;
         }
 
-        // Function for confirming analysis
-        function confirmAnalysis() {
-            alert("SNP Analysis Confirmed");
-        }
-
 
          function validateChromosomeInput() {
             var inputField = document.getElementById("chromosome");
@@ -73,7 +68,11 @@
             var startValue = parseInt(startInput.value) || 0;
             var endValue = parseInt(endInput.value) || 0;
 
-            if (endValue - startValue > 1500000) {
+            if (endValue <= startValue) {
+                // Display an error message
+                startInput.setCustomValidity("Start position must be less than or equal to the End position.");
+                return false;  // Prevent form submission
+            } else if (endValue - startValue > 1500000) {
                 // Display an error message
                 startInput.setCustomValidity("The range between Start and End positions should not exceed 1.5 million.");
                 return false;  // Prevent form submission
@@ -83,6 +82,7 @@
                 return true;  // Allow form submission
             }
         }
+
 
         function updateDownloadButtonVisibility() {
             var selectedPopulations = document.querySelectorAll('input[name="pop[]"]:checked');
@@ -121,7 +121,7 @@
         <form name="upload_confirm_form" id="upload_confirm_form" method="post">
 
             <div class="form-group">
-                <label class="display-4" for="Gene name">Gene name</label>
+                <label class="display-4" for="Gene name">Gene names</label>
                 <input type="text" class="form-control form-control-lg input-lg" id="Gene name" name="gene_name" oninput="disableOtherInputs('Gene name')" placeholder="Enter Gene names (e.g. DDX11L1,WASH7P)">
             </div>
 
