@@ -14,11 +14,9 @@ Mandriva is a genomic analysis web application that displays SNP variation and p
 3. `pip3 install -r requirements.txt`
 
 
-````
-```
-Please ensure that the mandriva_database.db and app.py are in the same folder while running the app.
+
+* Please ensure that the mandriva_database.db and app.py are in the same folder while running the app.
 If you wish to change the database directory, you should also change the *DATABASE* path in the application.
-```
-````
+
 
 
