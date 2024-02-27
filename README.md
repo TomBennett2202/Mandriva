@@ -22,7 +22,7 @@ If you wish to change the database directory, you should also change the *DATABA
 
 
 ## Developers
-This web application was designed and developed by [Thomas Bennette](https://github.com/TomBennett2202), [Melika Abdi](https://github.com/meliabdi), [Niya Louis](https://github.com/Niyalouis) & [Adam Brachtl](https://github.com/ABrachtl)
+This web application was designed and developed by [Thomas Bennette](https://github.com/TomBennett2202), [Melika Abdi](https://github.com/meliabdi), [Niya Louis](https://github.com/Niyalouis) & [Adam Brachtl](https://github.com/ABrachtl) as part of their MSc Bioinformatics Software Development Group Project at Queen Mary University of London.
 
 
 
