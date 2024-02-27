@@ -9,7 +9,7 @@ Mandriva is a genomic analysis web application that displays SNP variation and p
 
 ### Instructions 
 
-1. `Git clone git@github.com:TomBennett2202/Mandriva.git`
+1. `git clone https://github.com/TomBennett2202/Mandriva.git`
 2. `cd Mandriva`
 3. `pip3 install -r requirements.txt`
 
