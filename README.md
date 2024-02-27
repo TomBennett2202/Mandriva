@@ -13,4 +13,6 @@ Mandriva is a genomic analysis web application that displays SNP variation and p
 2. `cd Mandriva`
 3. `pip3 install -r requirements.txt`
 
+   <mark>Marked text</mark>
+
 
