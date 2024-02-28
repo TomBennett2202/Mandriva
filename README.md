@@ -4,7 +4,34 @@ Mandriva is a genomic analysis web application specializing in the analysis of S
 
 ## Installing Mandriva
 ### Data
-* Please download the required database (mandriva_database.db) from [Mandriva]([[https://qmulprod-my.sharepoint.com/personal/bt23629_qmul_ac_uk/_layouts/15/onedrive.aspx?id=%2Fpersonal%2Fbt23629%5Fqmul%5Fac%5Fuk%2FDocuments%2FMandriva&ct=1709042648099&or=OWA%2DNT&cid=bf1c1404%2D4efb%2D5f3f%2D8046%2D524f80580ab0&ga=1](https://qmulprod-my.sharepoint.com/:f:/g/personal/bt23629_qmul_ac_uk/EuwCtRYgQb9PlN-T18AO-54B21IENhkSLMXAFRdZJxm9xQ?e=gcOfo3)]](https://qmulprod-my.sharepoint.com/personal/bt23629_qmul_ac_uk/_layouts/15/onedrive.aspx?id=%2Fpersonal%2Fbt23629%5Fqmul%5Fac%5Fuk%2FDocuments%2FMandriva&ct=1709042648099&or=OWA%2DNT&cid=bf1c1404%2D4efb%2D5f3f%2D8046%2D524f80580ab0&ga=1)) (QMUL email is required to access the data)
+* Please download the required database (mandriva_database.db) from [Mandriva](https://qmulprod-my.sharepoint.com/personal/bt23629_qmul_ac_uk/_layouts/15/onedrive.aspx?id=%2Fpersonal%2Fbt23629%5Fqmul%5Fac%5Fuk%2FDocuments%2FMandriva&ct=1709042648099&or=OWA%2DNT&cid=bf1c1404%2D4efb%2D5f3f%2D8046%2D524f80580ab0&ga=1) (QMUL email is required to access the data)
+* If you want to visualize the database, a DB Browser for SQLite is required, which can be downloaded from [here](https://sqlitebrowser.org/dl/) 
+yesterday
+
+Update README.md
+
+yesterday
+
+Update README.md
+
+yesterday
+
+Update README.md
+### Instructions 
+yesterday
+
+Update README.md
+
+yesterday
+
+Update README.md
+1. `git clone https://github.com/TomBennett2202/Mandriva.git`
+yesterday
+
+Update README.md
+2. `cd Mandriva`
+3. `pip3 install -r requirements.txt`
+(QMUL email is required to access the data)
 * If you want to visualize the database, a DB Browser for SQLite is required, which can be downloaded from [here](https://sqlitebrowser.org/dl/) 
 
 
