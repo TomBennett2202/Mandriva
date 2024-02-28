@@ -10,9 +10,6 @@ Mandriva is a genomic analysis web application specializing in the analysis of S
 
 ### Instructions 
 1. `git clone https://github.com/TomBennett2202/Mandriva.git`
-yesterday
-
-Update README.md
 2. `cd Mandriva`
 3. `pip3 install -r requirements.txt`
 (QMUL email is required to access the data)
