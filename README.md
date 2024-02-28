@@ -9,14 +9,6 @@ Mandriva is a genomic analysis web application specializing in the analysis of S
 
 
 ### Instructions 
-1. `git clone https://github.com/TomBennett2202/Mandriva.git`
-2. `cd Mandriva`
-3. `pip3 install -r requirements.txt`
-(QMUL email is required to access the data)
-* If you want to visualize the database, a DB Browser for SQLite is required, which can be downloaded from [here](https://sqlitebrowser.org/dl/) 
-
-
-### Instructions 
 
 1. `git clone https://github.com/TomBennett2202/Mandriva.git`
 2. `cd Mandriva`
@@ -27,11 +19,8 @@ Mandriva is a genomic analysis web application specializing in the analysis of S
 If you wish to change the database directory, you should also change the *DATABASE* path in the application.
 
 
-
 ## Developers
 This web application was designed and developed by [Thomas Bennett](https://github.com/TomBennett2202), [Melika Abdi](https://github.com/meliabdi), [Niya Louis](https://github.com/Niyalouis) & [Adam Brachtl](https://github.com/ABrachtl) as part of the 2023/24 MSc Bioinformatics Software Development Group Project at Queen Mary University of London. 
 
 Supervisors: Professor Conrad Bessant & Dr Matteo Fumagalli.
-
-
 
