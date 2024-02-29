@@ -4,7 +4,7 @@ Mandriva is a genomic analysis web application specializing in the analysis of S
 
 ## Installing Mandriva
 ### Data
-* Please download the required database (mandriva_database.db) from [Mandriva](https://qmulprod-my.sharepoint.com/:u:/g/personal/bt23629_qmul_ac_uk/EeSEHRCPV_9LtoZsAn8JO8UB0hQtNMnb52GCCEqEHKkJog?e=zQrWg0) (QMUL email is required to access the data)
+* Please download the required database (mandriva_database.db) from [Mandriva](https://qmulprod-my.sharepoint.com/:f:/g/personal/bt23629_qmul_ac_uk/EuwCtRYgQb9PlN-T18AO-54Bz0da2uevDttHmZNTxHzKew?e=bcBdIC) (QMUL email is required to access the data)
 * If you want to visualize the database, a DB Browser for SQLite is required, which can be downloaded from [here](https://sqlitebrowser.org/dl/) 
 
 
