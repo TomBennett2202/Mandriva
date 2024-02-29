@@ -1,4 +1,4 @@
-# **Mandriva Website**
+# **Mandriva**
 Mandriva is a genomic analysis web application specializing in the analysis of Single Nucleotide Polymorphism (SNP) variations and population genetics specifically on human chromosome 1. The platform encompasses a range of analytical features including clustering analysis, admixture analysis, and FST analysis, complemented by visualizations. Additionally, Mandriva delivers insights into genotype and allele frequenciesa, as well as the clinical relevance associated with selected SNPs.
 
 
